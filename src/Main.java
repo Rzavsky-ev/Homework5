@@ -12,10 +12,8 @@ public class Main {
         int clientOS = scanner.nextInt();
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для IOS по ссылке.\n");
-        } else if (clientOS == 1) {
-            System.out.println("Установите версию приложения для Android по ссылке.\n");
         } else {
-            System.out.println("Ошибка ввода.\n");
+            System.out.println("Установите версию приложения для Android по ссылке.\n");
         }
 
         //Задача 2
@@ -26,35 +24,38 @@ public class Main {
         clientOS = scanner.nextInt();
         System.out.print("Введите, пожалуйста, год выпуска телефона: ");
         int creationDeviceYear = scanner.nextInt();
-        if (clientOS == 0) {
-            if ((creationDeviceYear < clientDeviceYear)) {
-                System.out.println("Установите облегченную версию " +
-                        "приложения для IOS по ссылке.\n");
-            } else {
-                System.out.println("Установите версию " +
-                        "приложения для IOS по ссылке.\n");
-            }
+        if (clientOS == 0 && creationDeviceYear < clientDeviceYear) {
+            System.out.println("Установите облегченную версию " +
+                    "приложения для IOS по ссылке.\n");
+        } else if (clientOS == 0) {
+            System.out.println("Установите версию " +
+                    "приложения для IOS по ссылке.\n");
+        } else if (clientOS == 1 && creationDeviceYear < clientDeviceYear) {
+
+            System.out.println("Установите облегченную версию приложения для Android " +
+                    "по ссылке.\n");
         } else if (clientOS == 1) {
-            if (creationDeviceYear < clientDeviceYear) {
-                System.out.println("Установите облегченную версию приложения для Android " +
-                        "по ссылке.\n");
-            } else {
-                System.out.println("Установите версию приложения для Android " +
-                        "по ссылке.\n");
-            }
+            System.out.println("Установите версию приложения для Android " +
+                    "по ссылке.\n");
         } else {
             System.out.println("Ошибка ввода.\n");
         }
 
         //Задача 3
         System.out.println("Задача 3:");
-        int year = 2021;
-        if (year < 1584) {
-            System.out.println("Введите год больше 1584.\n");
-        } else if (year % 4 == 0 || year % 1000 == 400) {
-            System.out.println("Год високосный.\n");
+        int year = 1700;
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                System.out.println("Год високосный.\n");
+            } else {
+                System.out.println("Год невисокосный.\n");
+            }
         } else {
-            System.out.println("Год невисокосный.\n");
+            if (year % 4 == 0) {
+                System.out.println("Год високосный.\n");
+            } else {
+                System.out.println("Год невисокосный.\n");
+            }
         }
 
         //Задача 4

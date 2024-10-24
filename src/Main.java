@@ -44,18 +44,10 @@ public class Main {
         //Задача 3
         System.out.println("Задача 3:");
         int year = 1700;
-        if (year % 100 == 0) {
-            if (year % 400 == 0) {
-                System.out.println("Год високосный.\n");
-            } else {
-                System.out.println("Год невисокосный.\n");
-            }
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)) {
+            System.out.println("Год високосный.\n");
         } else {
-            if (year % 4 == 0) {
-                System.out.println("Год високосный.\n");
-            } else {
-                System.out.println("Год невисокосный.\n");
-            }
+            System.out.println("Год невисокосный.\n");
         }
 
         //Задача 4
@@ -63,9 +55,9 @@ public class Main {
         int deliveryDistance = 95;
         if (deliveryDistance < 20) {
             System.out.println("Доставка займет 24 часа.\n");
-        } else if (20 <= deliveryDistance && deliveryDistance <= 60) {
+        } else if (deliveryDistance <= 60) {
             System.out.println("Доставка займет 36 часов.\n");
-        } else if (60 <= deliveryDistance && deliveryDistance <= 100) {
+        } else if (deliveryDistance <= 100) {
             System.out.println("Доставка займет 48 часов.\n");
         } else {
             System.out.println("Доставка не доступна.\n");
